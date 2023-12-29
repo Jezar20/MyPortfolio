@@ -111,11 +111,20 @@
     //     portfolioIsotope.isotope({filter: $(this).data('filter')});
     // });
 
-    // Certificates Isotope and filter
+// Certificates Isotope and filter UNCOMMENT FOR ALL CERTIFICATES
+    // var certificatesIsotope = $('.certificates-container').isotope({
+    //     itemSelector: '.portfolio-item',
+    //     layoutMode: 'fitRows'
+    // });
     var certificatesIsotope = $('.certificates-container').isotope({
         itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        filter: '.first' // Set the default filter to "first"
     });
+    
+    // Add the 'active' class to the "first" tab by default
+    $('#portfolio-flters-certificates li[data-filter=".first"]').addClass('active');
+
     $('#portfolio-flters-certificates li').on('click', function () {
         $("#portfolio-flters-certificates li").removeClass('active');
         $(this).addClass('active');
@@ -123,11 +132,21 @@
         certificatesIsotope.isotope({filter: $(this).data('filter')});
     });
 
-    // Projects Isotope and filter
+    // Projects Isotope and filter UNCOMMENT FOR ALL PROJECTS
+    // var projectsIsotope = $('.projects-container').isotope({
+    //     itemSelector: '.portfolio-item',
+    //     layoutMode: 'fitRows'
+    // });
+
     var projectsIsotope = $('.projects-container').isotope({
         itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
+        layoutMode: 'fitRows',
+        filter: '.fifth' // Set the default filter to "fifth"
     });
+
+    // Add the 'active' class to the "fifth" tab by default
+    $('#portfolio-flters-projects li[data-filter=".fifth"]').addClass('active');
+
     $('#portfolio-flters-projects li').on('click', function () {
         $("#portfolio-flters-projects li").removeClass('active');
         $(this).addClass('active');
