@@ -165,6 +165,17 @@
         loop: true,
     });
 
+     // Hide the note when the page is loaded
+     window.onload = function() {
+        document.getElementById('note').classList.add('hidden');
+    };
+
+    // Show the note when the user is about to leave the page
+    window.onbeforeunload = function() {
+        document.getElementById('note').classList.remove('hidden');
+    };
+
+
     
 })(jQuery);
 
